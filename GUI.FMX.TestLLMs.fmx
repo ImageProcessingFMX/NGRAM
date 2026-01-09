@@ -1,0 +1,290 @@
+object MainFormLLMEvaluation: TMainFormLLMEvaluation
+  Left = 0
+  Top = 0
+  Caption = 'NGRAM Model  Evaluation'
+  ClientHeight = 559
+  ClientWidth = 940
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object rctngl1: TRectangle
+    Align = Left
+    Size.Width = 265.000000000000000000
+    Size.Height = 527.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object btn_LoadTraingData: TCornerButton
+    Position.X = 24.000000000000000000
+    Position.Y = 264.000000000000000000
+    Sides = [Top, Left, Bottom, Right]
+    Size.Width = 200.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Load Training Data'
+    XRadius = 3.000000000000000000
+    YRadius = 3.000000000000000000
+    OnClick = btn_LoadTraingDataClick
+  end
+  object btn_TrainModel: TCornerButton
+    Position.X = 24.000000000000000000
+    Position.Y = 328.000000000000000000
+    Sides = [Top, Left, Bottom, Right]
+    Size.Width = 200.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Train Model'
+    XRadius = 3.000000000000000000
+    YRadius = 3.000000000000000000
+    OnClick = btn_TrainModelClick
+  end
+  object btn_SaveModel: TCornerButton
+    Position.X = 24.000000000000000000
+    Position.Y = 400.000000000000000000
+    Sides = [Top, Left, Bottom, Right]
+    Size.Width = 200.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'Save Model'
+    XRadius = 3.000000000000000000
+    YRadius = 3.000000000000000000
+    OnClick = btn_SaveModelClick
+  end
+  object btn_LoadModel: TCornerButton
+    Position.X = 24.000000000000000000
+    Position.Y = 464.000000000000000000
+    Sides = [Top, Left, Bottom, Right]
+    Size.Width = 200.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'Load Model'
+    XRadius = 3.000000000000000000
+    YRadius = 3.000000000000000000
+    OnClick = btn_LoadModelClick
+  end
+  object pnl_statusbar: TPanel
+    Align = Bottom
+    Position.Y = 527.000000000000000000
+    Size.Width = 940.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    object lbl_StatusBar: TLabel
+      Align = Client
+      Size.Width = 940.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'lbl_StatusBar'
+      TabOrder = 0
+    end
+  end
+  object btn_CreateModel: TCornerButton
+    Position.X = 24.000000000000000000
+    Position.Y = 24.000000000000000000
+    Sides = [Top, Left, Bottom, Right]
+    Size.Width = 200.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    Text = 'Create Model'
+    XRadius = 3.000000000000000000
+    YRadius = 3.000000000000000000
+    OnClick = btn_CreateModelClick
+  end
+  object edt_NGramSize: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 9
+    Text = '3'
+    Position.X = 24.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object pnl_executeModel: TPanel
+    Align = Client
+    Size.Width = 675.000000000000000000
+    Size.Height = 527.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    object pnl_Input: TPanel
+      Align = Top
+      Size.Width = 675.000000000000000000
+      Size.Height = 169.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 9
+      object mmo_Inputtext: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Align = Client
+        Margins.Top = 30.000000000000000000
+        Size.Width = 675.000000000000000000
+        Size.Height = 139.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Viewport.Width = 671.000000000000000000
+        Viewport.Height = 135.000000000000000000
+      end
+      object lbl1: TLabel
+        Position.X = 24.000000000000000000
+        Position.Y = 8.000000000000000000
+        Text = 'Input'
+        TabOrder = 5
+      end
+    end
+    object pnl_Parameters: TPanel
+      Align = Bottom
+      Position.Y = 400.000000000000000000
+      Size.Width = 675.000000000000000000
+      Size.Height = 127.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 10
+      object edt_length: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 6
+        Text = '20'
+        Position.X = 125.000000000000000000
+        Position.Y = 24.000000000000000000
+      end
+      object edt_temperature: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 14
+        Text = '0.7'
+        Position.X = 125.000000000000000000
+        Position.Y = 67.000000000000000000
+      end
+      object edt_TopK: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 15
+        Text = '0'
+        Position.X = 373.000000000000000000
+        Position.Y = 67.000000000000000000
+      end
+      object edt_TopP: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 17
+        Text = '0.9'
+        Position.X = 373.000000000000000000
+        Position.Y = 19.000000000000000000
+      end
+      object btn_Execute: TButton
+        Position.X = 505.000000000000000000
+        Position.Y = 16.000000000000000000
+        Size.Width = 152.000000000000000000
+        Size.Height = 89.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = 'Execute Model'
+        OnClick = btn_ExecuteClick
+      end
+      object lbl_TopK: TLabel
+        Position.X = 288.000000000000000000
+        Position.Y = 72.000000000000000000
+        Size.Width = 65.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'TopK'
+        TabOrder = 18
+      end
+      object lbl_TopP: TLabel
+        Position.X = 280.000000000000000000
+        Position.Y = 24.000000000000000000
+        Size.Width = 81.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'TopP'
+        TabOrder = 19
+      end
+      object lbl_Temperature: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 72.000000000000000000
+        Text = 'Temperature'
+        TabOrder = 20
+      end
+      object lbl_Genlength: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 24.000000000000000000
+        Text = 'Genlength'
+        TabOrder = 21
+      end
+    end
+    object pnl_outdata: TPanel
+      Align = Client
+      Size.Width = 675.000000000000000000
+      Size.Height = 231.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 11
+      object mmo_Out: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Align = Client
+        Margins.Top = 30.000000000000000000
+        Size.Width = 675.000000000000000000
+        Size.Height = 201.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 671.000000000000000000
+        Viewport.Height = 197.000000000000000000
+      end
+      object lbl2: TLabel
+        Position.X = 32.000000000000000000
+        Position.Y = 8.000000000000000000
+        Text = 'Output'
+        TabOrder = 1
+      end
+    end
+  end
+  object cb_GramType: TComboBox
+    Position.X = 24.000000000000000000
+    Position.Y = 104.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+  end
+  object cb_Smoothing: TComboBox
+    Position.X = 24.000000000000000000
+    Position.Y = 136.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 12
+  end
+  object chk_PreserveCase: TCheckBox
+    Position.X = 24.000000000000000000
+    Position.Y = 168.000000000000000000
+    TabOrder = 13
+    Text = 'Preserve Case'
+  end
+  object btn_SelectFolder: TCornerButton
+    Position.X = 24.000000000000000000
+    Position.Y = 208.000000000000000000
+    Sides = [Top, Left, Bottom, Right]
+    Size.Width = 200.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 14
+    Text = 'Select Folder'
+    XRadius = 3.000000000000000000
+    YRadius = 3.000000000000000000
+    OnClick = btn_SelectFolderClick
+  end
+  object dlgOpenfile: TOpenDialog
+    Options = [ofHideReadOnly, ofAllowMultiSelect, ofEnableSizing]
+    Left = 400
+    Top = 104
+  end
+  object dlgSavefile: TSaveDialog
+    Left = 464
+    Top = 104
+  end
+  object dlgOpenFolder: TOpenDialog
+    Left = 537
+    Top = 104
+  end
+end
